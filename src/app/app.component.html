@@ -1,0 +1,5 @@
+<div class="container">
+  <app-spinner *ngIf="loading"></app-spinner>
+  <app-login *ngIf="!loggedIn"></app-login>
+  <app-sidebar *ngIf="loggedIn"></app-sidebar>
+</div>

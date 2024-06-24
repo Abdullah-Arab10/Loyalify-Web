@@ -1,0 +1,34 @@
+<div class="field" [formGroup]="form">
+  <div class="field__label" *ngIf="label">{{ label }}</div>
+  <div class="field__wrapper">
+    <span class="field__wrapper__icon">
+      <svg-icon src="{{ iconsPath + icon }}"></svg-icon>
+    </span>
+
+    <div *ngIf="currency" class="field__wrapper__currency">$</div>
+
+    <input
+      *ngIf="field == 'input'"
+      [type]="type"
+      class="field__wrapper__input"
+      [placeholder]="placeholder"
+      [class.icon-input]="icon"
+      [class.gray-darker-background]="!currency"
+      [class.currency-input]="currency"
+      (change)="emitValue($event)"
+      formControlName="{{ control }}"
+    />
+
+    <textarea
+      class="field__wrapper__textarea"
+      *ngIf="field == 'textarea'"
+      formControlName="{{ control }}"
+    ></textarea>
+  </div>
+  <div
+    class="field__wrapper__error"
+    *ngIf="control && form.controls[control].errors"
+  >
+    {{ errorMessage }}
+  </div>
+</div>

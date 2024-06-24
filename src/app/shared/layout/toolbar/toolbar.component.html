@@ -1,0 +1,24 @@
+<mat-toolbar class="toolbar" [ngClass]="!isMobile ? 'reversed' : ''">
+  <button class="burger-icon" *ngIf="isMobile" (click)="toggleMobileMenu()">
+    <svg-icon [src]="ASSETS_ICONS + 'burger-light.svg'"></svg-icon>
+  </button>
+  <div class="toolbar__icons">
+    <div class="toolbar__icon">
+      <svg-icon [src]="ASSETS_ICONS + 'message-light.svg'"></svg-icon>
+    </div>
+    <div class="toolbar__icon">
+      <svg-icon [src]="ASSETS_ICONS + 'notification-light.svg'"></svg-icon>
+    </div>
+    <div class="toolbar__user user-image" (click)="toggleMenu()">
+      <img [src]="ASSETS_IMAGES + 'avatar-1.png'" alt="" />
+    </div>
+    <div class="toolbar__menu" *ngIf="menu" [@fadeInOut]>
+      <ul>
+        <li class="active">Profile</li>
+        <li>Edit Profile</li>
+        <li>Account Settings</li>
+        <li (click)="logout()">Log out</li>
+      </ul>
+    </div>
+  </div>
+</mat-toolbar>

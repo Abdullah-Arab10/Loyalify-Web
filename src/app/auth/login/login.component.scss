@@ -1,0 +1,19 @@
+.login {
+  padding-inline: 2rem;
+  max-width: 600px;
+  margin-inline: auto;
+  &__logo {
+    padding-block: 1rem;
+    svg {
+      width: 86px;
+    }
+  }
+  &__header {
+  }
+  &__form {
+  }
+  &__field {
+  }
+  &__button {
+  }
+}

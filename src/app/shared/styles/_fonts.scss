@@ -1,0 +1,141 @@
+@import "../styles/colors.scss";
+@font-face {
+  font-family: inter;
+  src: url("/assets/fonts/inter/inter.ttf") format("truetype");
+}
+:root {
+  --fi: "Inter", sans-serif;
+  --fp: "Poppins", sans-serif;
+}
+
+// Define font family mixin
+@mixin fp {
+  font-family: var(--fp); // Assuming --fp is defined in :root
+}
+
+// Title styles
+.title {
+  font-size: 16px;
+  line-height: calc(19 / 16);
+  font-weight: 600;
+
+  &_lg,
+  &_md,
+  &_sm {
+    @include fp; // Apply Poppins font family
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+
+  &_lg {
+    font-size: 96px;
+    line-height: calc(120 / 96);
+  }
+
+  &_md {
+    font-size: 72px;
+    line-height: calc(88 / 72);
+  }
+
+  &_sm {
+    font-size: 64px;
+    line-height: calc(72 / 64);
+  }
+}
+
+// Heading styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include fp; // Apply Poppins font family
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 56px;
+  line-height: calc(64 / 56);
+
+  /*  @include x {
+    // Assuming 'x' is a media query
+    font-size: 48px;
+    line-height: calc(72 / 48);
+  } */
+
+  /*  @include m {
+    // Assuming 'm' is a media query
+    font-size: 40px;
+    line-height: calc(60 / 40);
+  } */
+}
+
+h2 {
+  font-size: 48px;
+  line-height: calc(72 / 48);
+
+  /*   @include x {
+    font-size: 40px;
+    line-height: calc(60 / 40);
+  } */
+
+  /*   @include m {
+    font-size: 32px;
+    line-height: calc(48 / 32);
+    letter-spacing: -0.5px;
+  } */
+}
+
+h3 {
+  font-size: 40px;
+  line-height: calc(60 / 40);
+
+  /*  @include t {
+    // Assuming 't' is a media query
+    font-size: 32px;
+    line-height: calc(48 / 32);
+    letter-spacing: -0.5px;
+  } */
+}
+
+h4 {
+  font-size: 32px;
+  line-height: calc(48 / 32);
+  letter-spacing: -0.5px;
+}
+
+h5 {
+  font-size: 24px;
+  line-height: calc(32 / 24);
+}
+
+h6 {
+  font-size: 18px;
+  line-height: calc(24 / 18);
+}
+
+// Caption styles
+.caption {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: calc(18 / 13);
+}
+
+.caption-sm {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: calc(16 / 12);
+}

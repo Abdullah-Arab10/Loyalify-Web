@@ -1,0 +1,61 @@
+<mat-drawer-container autosize>
+  <mat-drawer
+    #drawer
+    mode="side"
+    [opened]="isMobile ? (isMobileMenuOpen ? true : false) : true"
+  >
+    <div class="sidebar">
+      <section class="sidebar__header">
+        <button (click)="isExpanded = !isExpanded">
+          <svg-icon [src]="ASSETS_ICONS + 'logo.svg'"></svg-icon>
+        </button>
+      </section>
+      <section class="sidebar__tools">
+        <div class="sidebar__caption caption-small" *ngIf="isExpanded">
+          Admin tools
+        </div>
+        <ul class="sidebar__items">
+          <li
+            *ngFor="let item of sidebarTools"
+            routerLinkActive=" active"
+            class="sidebar__item"
+            [ngClass]="isExpanded ? 'expanded' : ''"
+          >
+            <a
+              class="sidebar__link"
+              [routerLink]="item.route"
+              [ngClass]="isExpanded ? 'expanded' : ''"
+            >
+              <svg-icon [src]="item.icon"></svg-icon>
+              <span *ngIf="isExpanded">{{ item.title }}</span>
+            </a>
+          </li>
+          <span class="border" *ngIf="isExpanded"></span>
+        </ul>
+      </section>
+      <section class="sidebar__insights">
+        <div class="sidebar__caption caption-small" *ngIf="isExpanded">
+          Insights
+        </div>
+        <ul class="sidebar__items">
+          <li
+            *ngFor="let item of sidebarInsights"
+            routerLinkActive=" active"
+            class="sidebar__item"
+          >
+            <a
+              class="sidebar__link"
+              [routerLink]="item.route"
+              [ngClass]="isExpanded ? 'expanded' : ''"
+            >
+              <svg-icon [src]="item.icon"></svg-icon>
+              <span *ngIf="isExpanded">{{ item.title }}</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="sidebar__footer"></section></div
+  ></mat-drawer>
+  <app-toolbar></app-toolbar>
+  <router-outlet></router-outlet>
+</mat-drawer-container>

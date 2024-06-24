@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@use "../node_modules/scss-reset/src/scss/_reset.scss";
+@import "../src/app/shared/styles/global";
+
+html,
+body,
+app-root {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.71429;
+  color: var(--text);
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: var(--gray-dark);
+  font-weight: 600;
+  font-size: 14px;
+}
+.mat-drawer-inner-container {
+  scrollbar-width: none !important;
+}

@@ -1,0 +1,77 @@
+<div class="uploader image-wrapper my-4" [formGroup]="form">
+  <div class="field__label">{{ label }}</div>
+  <input
+    type="file"
+    [multiple]="multiple ? true : false"
+    (change)="multiple ? multiSelect($event) : selectFile($event)"
+    #fileUpload
+    [formControlName]="control"
+    accept="image/png , image/jpeg"
+  />
+
+  <div class="image-wrapper__preview">
+    <img
+      *ngIf="image || (multiple && multiImagesForPrivew.length > 0)"
+      [src]="multiple ? multiImagesForPrivew[sliderPointer] : image"
+      alt=""
+    />
+    <div *ngIf="multiple ? multiImagesForPrivew.length == 0 : !image">
+      No image upload yet
+    </div>
+
+    <button
+      *ngIf="multiple || !image"
+      mat-mini-fab
+      color="primary"
+      class="upload-btn"
+      (click)="fileUpload.click()"
+    >
+      <mat-icon>attach_file</mat-icon>
+    </button>
+    <button
+      *ngIf="image"
+      mat-mini-fab
+      color="primary"
+      class="delete-btn red-background"
+      (click)="delete()"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button
+      class="arrow-back"
+      (click)="slideBack()"
+      *ngIf="multiple && multiImagesForPrivew.length > 0"
+      mat-mini-fab
+    >
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+
+    <button
+      class="arrow-forward"
+      (click)="slideForward()"
+      *ngIf="multiple && multiImagesForPrivew.length > 0"
+      mat-mini-fab
+    >
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
+  <div class="image-wrapper__slider row" *ngIf="multiple">
+    <div class="image-wrapper__slider__images">
+      <div
+        class="image-wrapper__slider__images__image m-2"
+        *ngFor="let image of multiImagesForPrivew; let i = index"
+      >
+        <img [src]="image" alt="" />
+        <button
+          *ngIf="image"
+          mat-mini-fab
+          color="primary"
+          class="delete-btn red-background"
+          (click)="deleteMulti(image, i)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+@import "../../styles/colors";
+@import "../input/input.component.scss";
+@import "../../styles/_backgrounds.scss";
+
+.table {
+  height: 80%;
+
+  &__footer {
+    position: fixed;
+    left: 21rem;
+    right: 0;
+    bottom: 0;
+    background: #fcfcfc;
+    box-shadow: inset 1px 0px 0px #f4f4f4;
+    border: none !important;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    &__panel {
+      &__info {
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.23077;
+        //    color: $darkGray;
+      }
+      &__buttons {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+.p-datatable {
+  .p-datatable-thead > tr > th {
+    padding: 0 12px 16px;
+    vertical-align: middle;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.23077;
+    //  color: $darkGray;
+    font-weight: 600;
+  }
+  .p-datatable-thead > tr > th {
+    background-color: inherit;
+  }
+  .p-datatable-header {
+    margin-bottom: 2rem;
+    background-color: inherit;
+    border: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    // background: $lightestGray;
+    .table-header {
+      display: flex;
+      align-items: center;
+    }
+    .search {
+      &__input {
+        position: relative;
+        padding-inline: 3rem;
+        margin-inline: 2rem;
+      }
+      &__icon {
+        position: absolute;
+        top: 10px;
+        z-index: 100;
+        left: 2.5rem;
+      }
+    }
+  }
+  .p-datatable-tbody > tr > td {
+    position: relative;
+    display: table-cell;
+    vertical-align: top;
+    padding: 16px 12px;
+    //   color: $darkerBlack;
+    font-weight: 600;
+  }
+}
+.p-datatable > * {
+}
+.preview-image {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}

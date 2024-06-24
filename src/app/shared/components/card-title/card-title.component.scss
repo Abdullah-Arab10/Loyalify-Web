@@ -1,0 +1,21 @@
+@import "../../styles/colors";
+@import "../../styles/_backgrounds";
+.card-title {
+  display: flex;
+  align-items: center;
+
+  &__tag {
+    content: "";
+    width: 16px;
+    height: 32px;
+    border-radius: 4px;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    //color: $darkerBlack;
+    margin-inline: 1rem;
+  }
+}

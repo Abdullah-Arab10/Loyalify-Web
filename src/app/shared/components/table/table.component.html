@@ -1,0 +1,166 @@
+<div class="wrapper d-flex card table">
+  <p-table
+    #dt
+    class="h-100 overflow-auto"
+    [lazy]="true"
+    (onLazyLoad)="loadLazyListner($event)"
+    [value]="items"
+    [(selection)]="selectedItems"
+    dataKey="id"
+    [rowHover]="true"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+    [paginator]="true"
+    [rowsPerPageOptions]="[5, 10, 25, 50]"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [filterDelay]="0"
+    [globalFilterFields]="[
+      'name',
+      'firstName',
+      'lastName',
+      'email',
+      'category',
+      'address'
+    ]"
+    [totalRecords]="totalRecords"
+  >
+    <ng-template pTemplate="caption">
+      <div class="table-header">
+        <app-card-title
+          [title]="title"
+          [className]="'purble-light-background'"
+        ></app-card-title>
+
+        <span class="p-input-icon-left search">
+          <input
+            pInputText
+            type="text"
+            (input)="dt.filterGlobal($event.target, 'contains')"
+            placeholder="Global Search"
+            class="field__wrapper__input gray-darker-background search__input"
+          />
+          <svg-icon
+            src="../../../../assets/icons/search.svg"
+            class="search__icon"
+          ></svg-icon>
+        </span>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <!--  <button
+        mat-mini-fab
+        color="primary"
+        class="delete-btn red-background ml-1 mb-2"
+        *ngIf="selectedItems.length > 0"
+        (click)="deleteItems()"
+      >
+        <mat-icon>delete</mat-icon>
+      </button> -->
+      <tr>
+        <th style="width: 4rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+
+        <th
+          *ngFor="let column of columns"
+          [pSortableColumn]="column.field"
+          style="min-width: 11rem"
+        >
+          <div class="flex justify-content-between align-items-center">
+            {{ column.name }}
+            <p-sortIcon
+              *ngIf="column.sortable"
+              [field]="column.field"
+            ></p-sortIcon>
+            <p-columnFilter
+              type="text"
+              [field]="column.field"
+              display="menu"
+              class="ml-auto"
+              *ngIf="column.filterable"
+            ></p-columnFilter>
+          </div>
+        </th>
+
+        <th style="width: 5rem"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+      <tr class="p-selectable-row">
+        <td>
+          <!--           (click)="check(item)"
+ -->
+          <p-tableCheckbox [value]="item"></p-tableCheckbox>
+        </td>
+        <td *ngFor="let column of columns">
+          <span class="p-column-title"></span>
+          <span *ngIf="!column?.isDate && !column?.image">
+            {{ item[column.field] }}</span
+          >
+          <span *ngIf="column?.isDate"> {{ item[column.field] | date }}</span>
+          <div class="preview-image">
+            <img
+              *ngIf="column?.image"
+              src="{{ 'https://localhost:6001/' + item[column.field] }}"
+              alt=""
+            />
+          </div>
+        </td>
+        <!-- <td *ngIf="returnOrdrer && item.state == 'Not Decided'">
+          <button
+            mat-mini-fab
+            color="primary"
+            class="delete-btn red-background ml-1 mb-2"
+            (click)="returnRequest(item, false)"
+          >
+            <mat-icon>block</mat-icon>
+          </button>
+        </td>
+        <td *ngIf="returnOrdrer && item.state == 'Not Decided'">
+          <button
+            mat-mini-fab
+            color="primary"
+            class="delete-btn pistachio-background ml-1 mb-2"
+            (click)="returnRequest(item, true)"
+          >
+            <mat-icon>done_outline</mat-icon>
+          </button>
+        </td> -->
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="8">No Items found.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <div class="table__footer" *ngIf="footer">
+    <div class="table__footer__panel__info">
+      <div
+        class="table__footer__panel__info__icon"
+        *ngIf="footerPanelInfo.icon"
+      >
+        <svg-icon [src]="footerPanelInfo.icon"></svg-icon>
+      </div>
+      <div
+        class="table__footer__panel__info__text"
+        *ngIf="footerPanelInfo.text"
+      >
+        <p>{{ footerPanelInfo.text }} : {{ selectedItems.length }}</p>
+      </div>
+    </div>
+
+    <div class="table__footer__panel__buttons">
+      <app-button
+        *ngFor="let button of footerButtons"
+        [title]="button?.title"
+        [icon]="button?.icon"
+        [className]="button?.className"
+        (click)="footerButtonClickEventListner(button?.emitterName)"
+      ></app-button>
+    </div>
+  </div>
+</div>

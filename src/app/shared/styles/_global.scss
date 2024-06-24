@@ -1,0 +1,140 @@
+@import "colors";
+@import "fonts";
+@import "images";
+@import "mixins";
+* {
+  //font-family: 'inter', 'arial', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+/* body.dark {
+  @include darken();
+}
+body.light {
+  @include lighten();
+} */
+main {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--bgColor);
+  color: var(--textColor);
+}
+.card {
+  display: flex;
+  //background-color: $lightestGray;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-block: 0.5rem;
+}
+.caption {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+  // color: $darkGray;
+}
+.card-info {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 48px;
+  /* identical to box height, or 100% */
+
+  letter-spacing: -0.03em;
+
+  /* Neutral/07 */
+
+  // color: $darkerBlack;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+  border-radius: 50%;
+
+  svg-icon {
+    svg {
+      path {
+        //     fill: $darkerBlack;
+      }
+    }
+  }
+}
+.card-ratio {
+  height: 1.5rem;
+  padding: 0 4px;
+  border-radius: 8px;
+  //  color: $red;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  max-width: 5rem;
+  svg-icon {
+    svg {
+      path {
+        //       fill: $red;
+      }
+    }
+  }
+}
+.active-card {
+  //  background-color: $lightestGray;
+  box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.25),
+    inset 0px -1px 1px rgba(0, 0, 0, 0.04),
+    inset 0px 2px 0px rgba(255, 255, 255, 0.25);
+}
+.wrapper {
+  // padding: 1rem;
+}
+.content {
+  padding: 1rem 0.5rem;
+  margin-bottom: 3rem;
+}
+.active {
+  //  background: $lightGray;
+  box-shadow: inset 0px -2px 1px rgba(0, 0, 0, 0.05), inset 0px 1px 1px #ffffff;
+  border-radius: 12px;
+  //color: $darkerBlack !important;
+  svg-icon {
+    svg {
+      path {
+        //       fill: $darkerBlack;
+      }
+    }
+  }
+  transition-duration: 0.2s;
+}
+li {
+  list-style-type: none;
+}
+.price {
+  flex-shrink: 0;
+  margin-left: 12px;
+  padding: 0 8px;
+  border-radius: 6px;
+  line-height: 32px;
+  font-weight: 700;
+  max-height: 2rem;
+}
+.cards-container {
+  //  background-color: $lighterGray;
+  border: none;
+  border-radius: 20px;
+  padding: 4px 2px;
+  display: flex;
+  justify-content: space-between;
+}

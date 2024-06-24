@@ -1,0 +1,31 @@
+<div class="login">
+  <section class="login__header">
+    <div class="login__logo">
+      <svg-icon [src]="IconsPath + 'logo.svg'"></svg-icon>
+    </div>
+  </section>
+  <section class="login__form">
+    <form action="submit" [formGroup]="LoginFormGroup">
+      <div class="login__field">
+        <app-input
+          [formGroup]="LoginFormGroup"
+          [control]="'email'"
+          [icon]="'inbox.svg'"
+          [placeholder]="'Your email'"
+        ></app-input>
+      </div>
+      <div class="login__field">
+        <app-input
+          [formGroup]="LoginFormGroup"
+          [control]="'password'"
+          [icon]="'lock-light.svg'"
+          [placeholder]="'Password'"
+          [type]="'password'"
+        ></app-input>
+      </div>
+      <div class="login__button">
+        <app-button (click)="submit()" [title]="'Sign In'"></app-button>
+      </div>
+    </form>
+  </section>
+</div>
