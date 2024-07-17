@@ -19,7 +19,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
-import { Button } from 'primeng/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,10 @@ import { Button } from 'primeng/button';
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',
     }),
+    MatIconModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -62,6 +69,12 @@ import { Button } from 'primeng/button';
     SidebarComponent,
     InputComponent,
     ButtonComponent,
+    CardTitleComponent,
+    MatIconModule,
+    SelectComponent,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

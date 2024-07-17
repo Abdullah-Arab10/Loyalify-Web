@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://localhost:7236/api/';
+export const BASE_URL = 'https://localhost:7236/';
 export const AUTH_URL = 'https://localhost:7236/Auth/';
 export const ASSETS_IMAGES = '/assets/images/';
 export const ASSETS_ICONS = '/assets/icons/';

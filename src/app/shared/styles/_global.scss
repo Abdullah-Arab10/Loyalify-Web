@@ -2,6 +2,7 @@
 @import "fonts";
 @import "images";
 @import "mixins";
+@import "backgrounds";
 * {
   //font-family: 'inter', 'arial', sans-serif;
   box-sizing: border-box;
@@ -26,7 +27,7 @@ main {
 }
 .card {
   display: flex;
-  //background-color: $lightestGray;
+  background-color: var(--white);
   border: none;
   border-radius: 0.5rem;
   padding: 1.5rem;
@@ -137,4 +138,10 @@ li {
   padding: 4px 2px;
   display: flex;
   justify-content: space-between;
+}
+.center {
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  margin-inline: auto;
+  overflow-x: hidden;
 }

@@ -23,12 +23,13 @@
       'address'
     ]"
     [totalRecords]="totalRecords"
+    [scrollable]="true"
   >
     <ng-template pTemplate="caption">
       <div class="table-header">
         <app-card-title
           [title]="title"
-          [className]="'purble-light-background'"
+          [className]="'pink-background'"
         ></app-card-title>
 
         <span class="p-input-icon-left search">
@@ -37,7 +38,7 @@
             type="text"
             (input)="dt.filterGlobal($event.target, 'contains')"
             placeholder="Global Search"
-            class="field__wrapper__input gray-darker-background search__input"
+            class="field__wrapper__input field-background search__input"
           />
           <svg-icon
             src="../../../../assets/icons/search.svg"
@@ -102,7 +103,7 @@
           <div class="preview-image">
             <img
               *ngIf="column?.image"
-              src="{{ 'https://localhost:6001/' + item[column.field] }}"
+              src="{{ 'https://localhost:7236' + item[column.field] }}"
               alt=""
             />
           </div>

@@ -2,15 +2,18 @@
 .mat-drawer-container {
   height: 100%;
   scrollbar-width: none !important;
+  background-color: #f4f4f4;
 }
 .mat-drawer-side {
   border-right: 1px solid var(--border);
+  background-color: var(--white);
   scrollbar-width: none !important;
 }
 
 svg-icon {
-  display: block;
-  width: 86px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
 }
 .caption-small {
   font-size: 12px;
@@ -20,11 +23,24 @@ svg-icon {
 }
 .sidebar {
   &__header {
-    padding: 2rem 30px;
+    padding: 2rem 0;
     padding-bottom: 1rem;
     position: sticky;
     top: 0;
     background: var(--white);
+    svg-icon {
+      display: block;
+      width: 86px;
+      overflow: visible;
+    }
+  }
+  &__logo {
+    padding-inline: 2rem;
+  }
+  &__burger {
+    display: block;
+    margin-inline: auto;
+    width: 24px;
   }
 
   &__caption {

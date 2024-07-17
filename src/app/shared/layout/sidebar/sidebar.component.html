@@ -6,8 +6,19 @@
   >
     <div class="sidebar">
       <section class="sidebar__header">
-        <button (click)="isExpanded = !isExpanded">
+        <button
+          *ngIf="!isMobile && isExpanded"
+          class="sidebar__logo"
+          (click)="isExpanded = !isExpanded"
+        >
           <svg-icon [src]="ASSETS_ICONS + 'logo.svg'"></svg-icon>
+        </button>
+        <button
+          *ngIf="!isMobile && !isExpanded"
+          class="sidebar__burger test"
+          (click)="isExpanded = !isExpanded"
+        >
+          <svg-icon [src]="ASSETS_ICONS + 'burger-light.svg'"></svg-icon>
         </button>
       </section>
       <section class="sidebar__tools">

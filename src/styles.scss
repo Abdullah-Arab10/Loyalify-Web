@@ -28,3 +28,8 @@ a {
 .mat-drawer-inner-container {
   scrollbar-width: none !important;
 }
+
+.cdk-global-overlay-wrapper,
+.cdk-overlay-container {
+  //z-index: 99999 !important;
+}

@@ -12,13 +12,21 @@ button {
   padding: 12px 20px;
   // width: 89px;
   height: 48px;
-  background: var(--primary);
+
   border-radius: 12px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  color: var(--white);
+
   border: none;
   width: 100%;
+}
+.primary {
+  background: var(--primary);
+  color: var(--white);
+}
+.secondary {
+  background-color: var(--white);
+  color: var(--black);
 }
 .tools {
   display: flex;

@@ -30,14 +30,27 @@ export class SidebarComponent {
   isMobileObserver() {
     this.isMobile$ = this.layoutService.isMobile$.subscribe((res) => {
       this.isMobile = res;
+      if (this.isMobile) this.isExpanded = true;
     });
   }
   isMobileMenuObserver() {
     this.isMobileMenuOpen$ = this.layoutService.isMobileMenu$.subscribe(
-      (res) => (this.isMobileMenuOpen = res)
+      (res) => {
+        this.isMobileMenuOpen = res;
+      }
     );
   }
-
+  /*   modeEvent(): any {
+    console.log('tsstset');
+    if (this.isMobile) {
+      this.isMobileMenuOpen = false;
+      this.isExpanded = false;
+      return 'push';
+    } else {
+      this.isExpanded = true;
+      return 'side';
+    }
+  } */
   ngOnDestroy(): void {
     this.isMobile$.unsubscribe();
     this.isMobileMenuOpen$.unsubscribe();
