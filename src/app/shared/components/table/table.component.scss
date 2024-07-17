@@ -1,7 +1,6 @@
 @import "../../styles/colors";
-@import "../input/input.component.scss";
-@import "../../styles/_backgrounds.scss";
-
+@import "../../components/input/input.component.scss";
+@import "../../styles/global";
 .table {
   height: 80%;
 
@@ -39,7 +38,7 @@
     font-size: 13px;
     font-weight: 600;
     line-height: 1.23077;
-    //  color: $darkGray;
+    color: gray;
     font-weight: 600;
   }
   .p-datatable-thead > tr > th {
@@ -52,7 +51,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    // background: $lightestGray;
+    background: white;
     .table-header {
       display: flex;
       align-items: center;
@@ -76,11 +75,18 @@
     display: table-cell;
     vertical-align: top;
     padding: 16px 12px;
-    //   color: $darkerBlack;
+    color: black;
     font-weight: 600;
   }
 }
+.p-datatable-wrapper {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
 .p-datatable > * {
+}
+p-table {
+  width: 100%;
 }
 .preview-image {
   flex-shrink: 0;

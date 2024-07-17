@@ -1,0 +1,119 @@
+<div class="center store">
+  <div class="title">
+    <h1>New Store</h1>
+  </div>
+  <form action="submit" class="store__form" [formGroup]="storeForm">
+    <section class="card">
+      <app-card-title
+        [title]="'Name & description'"
+        [className]="'pistachio-background'"
+      ></app-card-title>
+      <div class="store__fields">
+        <div class="store__field">
+          <app-input
+            [formGroup]="storeForm"
+            [label]="'Store title'"
+            [control]="'name'"
+          ></app-input>
+        </div>
+        <div class="store__field">
+          <app-input
+            [formGroup]="storeForm"
+            [label]="'Description'"
+            [control]="'description'"
+            [field]="'textarea'"
+          ></app-input>
+        </div>
+      </div>
+    </section>
+    <section class="card">
+      <app-card-title
+        [title]="'Images'"
+        [className]="'cyan-background'"
+      ></app-card-title>
+      <div class="store__fields">
+        <div class="store__field">
+          <app-image-uploader
+            [label]="'Store image'"
+            [control]="'storeImageFile'"
+            (imageFilesSelection)="select($event, 'store')"
+          ></app-image-uploader>
+        </div>
+        <div class="store__field">
+          <app-image-uploader
+            [label]="'Cover image'"
+            [control]="'coverImageFile'"
+            (imageFilesSelection)="select($event, 'cover')"
+          ></app-image-uploader>
+        </div>
+        <div class="store__field"></div>
+      </div>
+    </section>
+    <section class="card">
+      <app-card-title
+        [title]="'Category & details'"
+        [className]="'lavendar-background'"
+      ></app-card-title>
+      <div class="store__fields">
+        <div class="store__field">
+          <app-select
+            [form]="storeForm"
+            [control]="'category'"
+            [label]="'category'"
+            [items]="categories"
+          ></app-select>
+        </div>
+        <div class="store__field">
+          <app-input
+            [control]="'address'"
+            [label]="'Address'"
+            [formGroup]="storeForm"
+          ></app-input>
+        </div>
+        <div class="store__field">
+          <app-input
+            [control]="'phoneNumber'"
+            [label]="'Phone number'"
+            [formGroup]="storeForm"
+          ></app-input>
+        </div>
+      </div>
+      <div class="store__field">
+        <app-input
+          [control]="'pointRation'"
+          [label]="'Point Ratio'"
+          [percent]="true"
+          [formGroup]="storeForm"
+        ></app-input>
+      </div>
+    </section>
+    <section class="card">
+      <app-card-title
+        [title]="'Store manager info'"
+        [className]="'orange-background'"
+      ></app-card-title>
+      <div class="store__fields">
+        <div class="store__field">
+          <app-input
+            [control]="'storeManagerEmail'"
+            [formGroup]="storeForm"
+            [label]="'Email'"
+          ></app-input>
+        </div>
+        <div class="store__field">
+          <app-input
+            [control]="'storeManagerPassword'"
+            [formGroup]="storeForm"
+            [label]="'Password'"
+            [type]="'password'"
+          ></app-input>
+        </div>
+      </div>
+    </section>
+    <section class="submit">
+      <div class="store__button">
+        <app-button [title]="'Create'" (click)="submit()"></app-button>
+      </div>
+    </section>
+  </form>
+</div>

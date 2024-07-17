@@ -1,0 +1,11 @@
+@import "../../shared/styles/global";
+.card {
+  flex-direction: column;
+}
+.store {
+  &__fields {
+    @include flex-column;
+  }
+  &__field {
+  }
+}

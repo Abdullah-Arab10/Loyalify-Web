@@ -1,0 +1,35 @@
+@import "../../shared/styles/global";
+.stores {
+  &__banner {
+    background-color: var(--pink);
+    border-radius: 24px;
+    @include flex-center-column-horiz;
+    padding-block: 2rem;
+  }
+  @media screen and (min-width: 1024px) {
+    &__banner {
+      flex-direction: row-reverse;
+      justify-content: space-around;
+    }
+  }
+  &__text {
+    max-width: 200px;
+    h3 {
+      margin-block: 1rem;
+      text-align: center;
+    }
+    span {
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+  }
+  &__figure {
+    width: 200px;
+  }
+  @media screen and (min-width: 1024px) {
+    &__figure {
+      width: 300px;
+    }
+  }
+}

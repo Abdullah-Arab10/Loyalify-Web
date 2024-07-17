@@ -17,8 +17,9 @@ export class InputComponent {
   @Input() formGroup?: FormGroup;
   @Output() inputValueEmitter = new EventEmitter<any>();
   @Input() field: string = 'input';
-  @Input() currency = false;
+  @Input() currency: boolean = false;
   @Input() type: string = 'text';
+  @Input() percent: boolean = false;
   form: FormGroup;
 
   constructor(

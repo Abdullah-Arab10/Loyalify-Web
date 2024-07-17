@@ -6,15 +6,15 @@
     </span>
 
     <div *ngIf="currency" class="field__wrapper__currency">$</div>
-
+    <div *ngIf="percent" class="field__wrapper__currency">%</div>
     <input
       *ngIf="field == 'input'"
       [type]="type"
       class="field__wrapper__input"
       [placeholder]="placeholder"
       [class.icon-input]="icon"
-      [class.gray-darker-background]="!currency"
-      [class.currency-input]="currency"
+      [class.field-background]="!currency"
+      [class.currency-input]="currency || percent"
       (change)="emitValue($event)"
       formControlName="{{ control }}"
     />

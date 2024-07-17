@@ -1,0 +1,21 @@
+<div class="stores center">
+  <section class="stores__banner">
+    <div class="stores__figure">
+      <img [src]="imagesPath + 'banner.png'" alt="" />
+    </div>
+    <div class="stores__text">
+      <h3>Loyalify Stores</h3>
+      <span>Did you know that you can add a new store in a minute ?!</span>
+      <app-button
+        [title]="'Create a store'"
+        [className]="'secondary'"
+        (click)="navigateToAddStore()"
+      ></app-button>
+    </div>
+  </section>
+  <app-table
+    [columns]="columns"
+    [title]="'Stores List'"
+    [items]="stores"
+  ></app-table>
+</div>

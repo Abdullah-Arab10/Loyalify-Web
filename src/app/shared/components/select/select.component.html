@@ -1,20 +1,21 @@
-<div class="field__label" *ngIf="label">{{ label }}</div>
-<div class="select" [formGroup]="form">
-  <mat-select
-    disableOptionCentering
-    panelClass="select-panel"
-    name="item"
-    [formControlName]="control"
-  >
-    <mat-option *ngFor="let item of items" [value]="item">
-      {{ item.viewValue }}
-    </mat-option>
-  </mat-select>
-  <div
-    class="field__wrapper__error"
-    *ngIf="control && form.controls[control].errors"
-  >
-    {{ errorMessage }}
+<div class="field">
+  <div class="field__label" *ngIf="label">{{ label }}</div>
+  <div class="select" [formGroup]="form">
+    <mat-select
+      disableOptionCentering
+      panelClass="select-panel"
+      name="item"
+      [formControlName]="control"
+    >
+      <mat-option *ngFor="let item of items" [value]="item.id">
+        {{ item.name }}
+      </mat-option>
+    </mat-select>
+    <div
+      class="field__wrapper__error"
+      *ngIf="control && form.controls[control].errors"
+    >
+      {{ errorMessage }}
+    </div>
   </div>
-  <!-- </mat-form-field> -->
 </div>

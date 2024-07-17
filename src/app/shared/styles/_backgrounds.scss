@@ -1,66 +1,74 @@
-/* @import 'colors';
+@import "colors";
+.white-background {
+  background-color: var(--white);
+}
 .blue-background {
-  background-color: $blue !important;
+  background-color: var(--blue) !important;
 }
 .green-background {
-  background-color: $green !important;
+  background-color: var(--green) !important;
 }
 .red-background {
-  background-color: $red !important;
+  background-color: var(--red) !important;
 }
 .purble-background {
-  background-color: $purple !important;
+  background-color: var(--purple) !important;
 }
 .orange-background {
-  background-color: $orange !important;
+  background-color: var(--orange) !important;
 }
 .lavendar-background {
-  background-color: $lavender !important;
+  background-color: var(--lavender) !important;
 }
 .cyan-background {
-  background-color: $cyan !important;
+  background-color: var(--cyan) !important;
 }
 .pistachio-background {
-  background-color: $pistachio !important;
+  background-color: var(--pistachio) !important;
 }
 .yellow-background {
-  background-color: $yellow !important;
+  background-color: var(--yellow) !important;
 }
 .red-light-background {
-  background: $red-light !important;
+  background: var(--red-light) !important;
 }
 .purble-light-background {
-  background: $purble-light !important;
+  background: var(--purble-light) !important;
 }
 .green-light-background {
-  background: $green-light !important;
+  background: var(--green-light) !important;
 }
 .gray-darker-background {
-  background: $lighterGray !important;
+  background: var(--lighterGray) !important;
+}
+.field-background {
+  background: var(--filed-background);
+}
+.pink-background {
+  background: var(--pink);
 }
 .transparent-green-background {
-  background: $transparent-green !important;
+  background: var(--transparent-green) !important;
 }
 .transparent-blue-background {
-  background: $transparent-blue !important;
+  background: var(--transparent-blue) !important;
 }
 .transparent-purble-background {
-  background: $transparent-purble !important;
+  background: var(--transparent-purble) !important;
 }
 .transparent-red-background {
-  background: $transparent-red !important;
+  background: var(--transparent-red) !important;
 }
 .black-background {
-  background: $darkerBlack !important;
+  background: var(--black) !important;
 }
 element.style {
   opacity: 1;
 }
 
 .toast-success {
-  background-color: $green !important;
+  background-color: var(--green) !important;
 }
 .toast-error {
-  background-color: $red !important;
+  background-color: var(--red) !important;
 }
- */

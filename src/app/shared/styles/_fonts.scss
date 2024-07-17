@@ -1,4 +1,5 @@
 @import "../styles/colors.scss";
+
 @font-face {
   font-family: inter;
   src: url("/assets/fonts/inter/inter.ttf") format("truetype");
@@ -69,20 +70,20 @@ h6 {
 h1 {
   font-size: 56px;
   line-height: calc(64 / 56);
-
-  /*  @include x {
-    // Assuming 'x' is a media query
-    font-size: 48px;
-    line-height: calc(72 / 48);
-  } */
-
-  /*  @include m {
-    // Assuming 'm' is a media query
-    font-size: 40px;
-    line-height: calc(60 / 40);
-  } */
 }
 
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 48px;
+    line-height: calc(72 / 48);
+  }
+}
+@media screen and (max-width: 786px) {
+  h1 {
+    font-size: 40px;
+    line-height: calc(60 / 40);
+  }
+}
 h2 {
   font-size: 48px;
   line-height: calc(72 / 48);
@@ -102,15 +103,14 @@ h2 {
 h3 {
   font-size: 40px;
   line-height: calc(60 / 40);
-
-  /*  @include t {
-    // Assuming 't' is a media query
+}
+@media screen and (max-width: 768px) {
+  h3 {
     font-size: 32px;
     line-height: calc(48 / 32);
     letter-spacing: -0.5px;
-  } */
+  }
 }
-
 h4 {
   font-size: 32px;
   line-height: calc(48 / 32);

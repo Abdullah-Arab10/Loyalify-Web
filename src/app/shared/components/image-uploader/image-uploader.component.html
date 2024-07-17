@@ -1,4 +1,4 @@
-<div class="uploader image-wrapper my-4" [formGroup]="form">
+<div class="uploader image-wrapper my-4 field" [formGroup]="form">
   <div class="field__label">{{ label }}</div>
   <input
     type="file"
@@ -23,7 +23,7 @@
       *ngIf="multiple || !image"
       mat-mini-fab
       color="primary"
-      class="upload-btn"
+      class="btn white-background"
       (click)="fileUpload.click()"
     >
       <mat-icon>attach_file</mat-icon>
@@ -32,7 +32,7 @@
       *ngIf="image"
       mat-mini-fab
       color="primary"
-      class="delete-btn red-background"
+      class="btn red-background"
       (click)="delete()"
     >
       <mat-icon>delete</mat-icon>
@@ -73,5 +73,11 @@
         </button>
       </div>
     </div>
+  </div>
+  <div
+    class="field__wrapper__error"
+    *ngIf="control && form.controls[control].errors"
+  >
+    {{ errorMessage }}
   </div>
 </div>

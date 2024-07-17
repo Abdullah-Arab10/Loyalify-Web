@@ -1,3 +1,8 @@
-@import '../../styles/_backgrounds';
-@import '../../styles/_images';
-@import '../input/input.component.scss';
+@import "../../styles/_backgrounds";
+@import "../../styles/_images";
+@import "../input/input.component.scss";
+
+.btn {
+  border-radius: 50%;
+  padding: 0.5rem;
+}

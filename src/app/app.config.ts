@@ -6,13 +6,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {
   HTTP_INTERCEPTORS,
   provideHttpClient,
-  withInterceptors,
   withInterceptorsFromDi,
 } from '@angular/common/http';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { provideToastr } from 'ngx-toastr';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
-import { AuthGuard } from './core/guards/auth.guard';
+import { provideClientHydration } from '@angular/platform-browser';
+import { provideAngularSvgIcon } from 'angular-svg-icon';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
@@ -30,5 +30,6 @@ export const appConfig: ApplicationConfig = {
       multi: true,
     },
     provideToastr(),
+    provideAngularSvgIcon(),
   ],
 };

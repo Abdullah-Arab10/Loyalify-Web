@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { LoadingService } from './core/themes/loading.service';
 import { Subscription } from 'rxjs';
 import { AuthService } from './core/http/auth.service';
+import { StoresModule } from './stores/stores.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SharedModule, AuthModule, CommonModule],
+  imports: [RouterOutlet, SharedModule, AuthModule, CommonModule, StoresModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

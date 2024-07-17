@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormGroup, FormGroupDirective} from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormGroup, FormGroupDirective } from '@angular/forms';
+import { ValidationService } from '../../../core/validation.service';
 
 @Component({
   selector: 'app-image-uploader',
@@ -24,14 +25,17 @@ export class ImageUploaderComponent implements OnInit {
   sliderPointer = -1;
 
   multiImagesForPrivew: string[] = [];
-  constructor(private rootFormGroup: FormGroupDirective) {}
+  constructor(
+    private rootFormGroup: FormGroupDirective,
+    private validationService: ValidationService
+  ) {}
   ngOnInit(): void {
     this.form = this.rootFormGroup.control;
   }
 
   delete() {
     this.image = '';
-    this.form.controls['image'].setValue('');
+    this.form.controls[this.control].setValue('');
     this.imagePreview.emit(this.image);
   }
   selectFile(event: any) {
@@ -59,7 +63,8 @@ export class ImageUploaderComponent implements OnInit {
             this.preview = e.target.result;
             this.image = reader?.result as string;
             this.imagePreview.emit(this.image);
-            this.form.controls['imageFile'].setValue(file);
+            this.imageFilesSelection.emit(file);
+            //  console.log(this.form.value);
           };
           reader.readAsDataURL(this?.currentFile);
         }
@@ -109,5 +114,17 @@ export class ImageUploaderComponent implements OnInit {
     i >= 0
       ? this.sliderPointer--
       : (this.sliderPointer = this.multiImagesForPrivew.length - 1);
+  }
+  get errorMessage() {
+    let formControl = this.form.controls[this.control];
+    for (const validatorName in formControl?.errors) {
+      if (formControl?.touched)
+        return this.validationService.getValidatorErrorMessage(
+          validatorName,
+          formControl?.errors[validatorName],
+          this?.control
+        );
+    }
+    return null;
   }
 }
