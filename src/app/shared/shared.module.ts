@@ -23,7 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-
+import { InputTextModule } from 'primeng/inputtext';
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -56,6 +56,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    InputTextModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -75,6 +76,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    InputTextModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
