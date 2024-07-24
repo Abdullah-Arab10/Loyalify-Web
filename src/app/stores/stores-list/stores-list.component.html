@@ -17,5 +17,7 @@
     [columns]="columns"
     [title]="'Stores List'"
     [items]="stores"
+    (itemsEventEmitter)="changeStoreStatus($event)"
+    [totalRecords]="stores.length"
   ></app-table>
 </div>

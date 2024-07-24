@@ -46,10 +46,7 @@ export class TableComponent implements OnInit, OnChanges {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {}
-  ngOnChanges(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
-  }
+  ngOnChanges(): void {}
   loadLazyListner(event: any) {
     this.lazyLoadEventEmitter.emit(event);
   }
@@ -57,11 +54,12 @@ export class TableComponent implements OnInit, OnChanges {
     this.deleteItemsEvent.emit(this.selectedItems);
     this.selectedItems = [];
   }
-  returnRequest(item: any, accept: boolean) {
-    this.itemsEventEmitter.emit({ item, accept });
-  }
+
   itemEventEmitter = (): void =>
     this.itemsEventEmitter.emit(this.selectedItems);
+  changeStoreStatus(id: number) {
+    this.itemsEventEmitter.emit(id);
+  }
 
   footerButtonClickEventListner(emitterName: any) {
     console.log(emitterName);

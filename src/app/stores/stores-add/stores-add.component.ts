@@ -64,13 +64,11 @@ export class StoresAddComponent implements OnDestroy, OnInit {
     this.getCategories();
     this.initStoreForm();
   }
-  select(event: File, field: string) {
-    if ((field = 'cover')) {
-      this.coverImage = event;
-    }
-    if ((field = 'store')) {
-      this.storeImage = event;
-    }
+  selectCover(event: File) {
+    this.coverImage = event;
+  }
+  selectImage(event: File) {
+    this.storeImage = event;
   }
   appendFormData() {
     let formValues = this.storeForm.value;
@@ -103,7 +101,7 @@ export class StoresAddComponent implements OnDestroy, OnInit {
       .createStore(this.storeFormData)
       .subscribe((res) => {
         this._notificationService.showSuccess('Store Created Successfully!');
-        this._router.navigate(['/stores ']);
+        this._router.navigate(['stores']);
       });
   }
   ngOnDestroy(): void {

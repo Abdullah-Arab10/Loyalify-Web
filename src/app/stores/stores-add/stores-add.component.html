@@ -36,14 +36,14 @@
           <app-image-uploader
             [label]="'Store image'"
             [control]="'storeImageFile'"
-            (imageFilesSelection)="select($event, 'store')"
+            (imageFilesSelection)="selectImage($event)"
           ></app-image-uploader>
         </div>
         <div class="store__field">
           <app-image-uploader
             [label]="'Cover image'"
             [control]="'coverImageFile'"
-            (imageFilesSelection)="select($event, 'cover')"
+            (imageFilesSelection)="selectCover($event)"
           ></app-image-uploader>
         </div>
         <div class="store__field"></div>

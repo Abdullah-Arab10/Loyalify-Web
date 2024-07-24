@@ -24,6 +24,11 @@
       margin-bottom: 1rem;
     }
   }
+  @media screen and (min-width: 1024px) {
+    &__text {
+      max-width: 400px;
+    }
+  }
   &__figure {
     width: 200px;
   }

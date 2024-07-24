@@ -20,4 +20,9 @@ export class StoresService {
       params: queries,
     });
   }
+  changeStoreStatus(storeId: number) {
+    return this._http.post(BASE_URL + 'Store/ChangeStoreState', {
+      id: storeId,
+    });
+  }
 }

@@ -2,8 +2,6 @@
   <p-table
     #dt
     class="h-100 overflow-auto"
-    [lazy]="true"
-    (onLazyLoad)="loadLazyListner($event)"
     [value]="items"
     [(selection)]="selectedItems"
     dataKey="id"
@@ -20,7 +18,8 @@
       'lastName',
       'email',
       'category',
-      'address'
+      'address',
+      'phoneNumber'
     ]"
     [totalRecords]="totalRecords"
     [scrollable]="true"
@@ -36,7 +35,7 @@
           <input
             pInputText
             type="text"
-            (input)="dt.filterGlobal($event.target, 'contains')"
+            (input)="dt.filterGlobal($any($event.target).value, 'contains')"
             placeholder="Global Search"
             class="field__wrapper__input field-background search__input"
           />
@@ -49,7 +48,7 @@
     </ng-template>
 
     <ng-template pTemplate="header">
-      <!--  <button
+      <!--     <button
         mat-mini-fab
         color="primary"
         class="delete-btn red-background ml-1 mb-2"
@@ -58,7 +57,7 @@
       >
         <mat-icon>delete</mat-icon>
       </button> -->
-      <tr>
+      <tr style="height: 3rem !important">
         <th style="width: 4rem">
           <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
         </th>
@@ -66,7 +65,7 @@
         <th
           *ngFor="let column of columns"
           [pSortableColumn]="column.field"
-          style="min-width: 11rem"
+          style="min-width: 6rem"
         >
           <div class="flex justify-content-between align-items-center">
             {{ column.name }}
@@ -100,34 +99,31 @@
             {{ item[column.field] }}</span
           >
           <span *ngIf="column?.isDate"> {{ item[column.field] | date }}</span>
-          <div class="preview-image">
+          <div class="preview-image" *ngIf="column?.image">
             <img
-              *ngIf="column?.image"
               src="{{ 'https://localhost:7236' + item[column.field] }}"
               alt=""
             />
           </div>
         </td>
-        <!-- <td *ngIf="returnOrdrer && item.state == 'Not Decided'">
+        <td *ngIf="item.state == 'Inactive'">
           <button
             mat-mini-fab
-            color="primary"
-            class="delete-btn red-background ml-1 mb-2"
-            (click)="returnRequest(item, false)"
+            class="pistachio-background tool-icon"
+            (click)="changeStoreStatus(item.id)"
           >
-            <mat-icon>block</mat-icon>
+            <mat-icon>play_circle_outline</mat-icon>
           </button>
         </td>
-        <td *ngIf="returnOrdrer && item.state == 'Not Decided'">
+        <td *ngIf="item.state == 'Active'">
           <button
             mat-mini-fab
-            color="primary"
-            class="delete-btn pistachio-background ml-1 mb-2"
-            (click)="returnRequest(item, true)"
+            class="red-background tool-icon"
+            (click)="changeStoreStatus(item.id)"
           >
-            <mat-icon>done_outline</mat-icon>
+            <mat-icon>pause_circle_outline</mat-icon>
           </button>
-        </td> -->
+        </td>
       </tr>
     </ng-template>
 
