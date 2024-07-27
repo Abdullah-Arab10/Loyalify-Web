@@ -47,6 +47,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'categories',
+    loadChildren: () =>
+      import('../app/categories/categories-routing.module').then(
+        (m) => m.CategoriesRoutingModule
+      ),
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: '/home',

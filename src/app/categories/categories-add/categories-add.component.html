@@ -1,0 +1,14 @@
+<mat-dialog-content class="card">
+  <div class="categories">
+    <section class="fields">
+      <form action="submit">
+        <app-input
+          [label]="'Category name'"
+          [formGroup]="categoriesForm"
+          [control]="'name'"
+        ></app-input>
+      </form>
+      <app-button [title]="'Create'"></app-button>
+    </section>
+  </div>
+</mat-dialog-content>

@@ -24,6 +24,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { InputTextModule } from 'primeng/inputtext';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -57,6 +58,7 @@ import { InputTextModule } from 'primeng/inputtext';
     MatSelectModule,
     MatInputModule,
     InputTextModule,
+    MatDialogModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -77,6 +79,7 @@ import { InputTextModule } from 'primeng/inputtext';
     MatSelectModule,
     MatInputModule,
     InputTextModule,
+    MatDialogModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
