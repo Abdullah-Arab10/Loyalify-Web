@@ -7,11 +7,21 @@ import { LoadingService } from './core/themes/loading.service';
 import { Subscription } from 'rxjs';
 import { AuthService } from './core/http/auth.service';
 import { StoresModule } from './stores/stores.module';
+import { CategoriesModule } from './categories/categories.module';
+import { OffersModule } from './offers/offers.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SharedModule, AuthModule, CommonModule, StoresModule],
+  imports: [
+    RouterOutlet,
+    SharedModule,
+    AuthModule,
+    CommonModule,
+    StoresModule,
+    CategoriesModule,
+    OffersModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

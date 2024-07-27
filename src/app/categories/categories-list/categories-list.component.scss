@@ -1,0 +1,8 @@
+@import "../../shared/styles/global";
+.banner {
+  background-color: var(--gray-light);
+
+  &__text {
+    color: var(--white);
+  }
+}

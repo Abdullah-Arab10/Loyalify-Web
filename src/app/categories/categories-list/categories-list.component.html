@@ -1,0 +1,24 @@
+<div class="categoires center">
+  <section class="categoires__banner banner">
+    <div class="categoires__figure banner__figure">
+      <img [src]="imagesPath + 'figure-2.png'" alt="" />
+    </div>
+    <div class="categoires__text banner__text">
+      <h3>Loyalify Categories</h3>
+      <span>Did you know that you can add a new category in a minute ?!</span>
+      <app-button
+        [title]="'Create a category'"
+        [className]="'secondary'"
+        (click)="openDialog()"
+      ></app-button>
+    </div>
+  </section>
+  <section class="categories__list">
+    <app-table
+      [title]="'Categories List'"
+      [columns]="columns"
+      [items]="categories"
+      [totalRecords]="categories.length"
+    ></app-table>
+  </section>
+</div>

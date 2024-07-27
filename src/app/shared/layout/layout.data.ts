@@ -28,6 +28,11 @@ export const sidebarTools: SidebarItems[] = [
     route: '/stores',
   },
   {
+    title: 'Categories',
+    icon: `${ASSETS_ICONS}categories-light.svg`,
+    route: '/categories',
+  },
+  {
     title: 'Orders',
     icon: `${ASSETS_ICONS}orders-light.svg`,
     route: 'orders/list',
