@@ -17,11 +17,11 @@ export const sidebarTools: SidebarItems[] = [
     route: '/offers',
   },
 
-  {
+  /*  {
     title: 'Users',
     icon: `${ASSETS_ICONS}customers-light.svg`,
     route: '/users',
-  },
+  }, */
   {
     title: 'Stores',
     icon: `${ASSETS_ICONS}shop-light.svg`,
@@ -32,7 +32,7 @@ export const sidebarTools: SidebarItems[] = [
     icon: `${ASSETS_ICONS}categories-light.svg`,
     route: '/categories',
   },
-  {
+  /*   {
     title: 'Orders',
     icon: `${ASSETS_ICONS}orders-light.svg`,
     route: 'orders/list',
@@ -46,10 +46,10 @@ export const sidebarTools: SidebarItems[] = [
     title: 'Promote',
     icon: `${ASSETS_ICONS}promote-light.svg`,
     route: '/promte',
-  },
+  }, */
 ];
 export const sidebarInsights: SidebarItems[] = [
-  {
+  /*  {
     title: 'Inbox',
     icon: `${ASSETS_ICONS}inbox.svg`,
     route: '/inbox',
@@ -64,5 +64,5 @@ export const sidebarInsights: SidebarItems[] = [
     title: 'Reviews',
     icon: `${ASSETS_ICONS}reviews.svg`,
     route: '/reviews',
-  },
+  }, */
 ];

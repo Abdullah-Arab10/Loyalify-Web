@@ -1,2 +1,159 @@
+<div class="home">
+  <section class="home__banner banner">
+    <div class="home__figure banner__figure">
+      <img [src]="imagesPath + 'banner.png'" alt="" />
+    </div>
+    <div class="home__text banner__text">
+      <h3>Loyalify Dashboard</h3>
+      <span>Discover Loyalify Statistics in a minute !</span>
+    </div>
+  </section>
 
-
+  <section class="home__card card overview">
+    <div class="home__title">
+      <app-card-title
+        [title]="'Offers Overview'"
+        [className]="'orange-background'"
+      ></app-card-title>
+    </div>
+    <div class="home__cards">
+      <div class="home__card">
+        <div class="home__icon">
+          <span class="background-cyan icon cyan-background">
+            <svg-icon [src]="iconsPath + 'diamond-light.svg'"></svg-icon>
+          </span>
+        </div>
+        <div class="home__card__content">
+          <span class="caption">Total Offers</span>
+          <span class="card-info">{{
+            statisticsValues?.totalOffers || 0
+          }}</span>
+        </div>
+      </div>
+      <div class="home__card">
+        <div class="home__icon">
+          <span class="purble-light-background icon">
+            <svg-icon [src]="iconsPath + 'fire.svg'"></svg-icon>
+          </span>
+        </div>
+        <div class="home__card__content">
+          <span class="caption">Active Offers</span>
+          <span class="card-info">{{
+            statisticsValues?.activeOffers || 0
+          }}</span>
+        </div>
+      </div>
+      <div class="home__card">
+        <div class="home__icon">
+          <span class="pistachio-background icon">
+            <svg-icon [src]="iconsPath + 'percent.svg'"></svg-icon>
+          </span>
+        </div>
+        <div class="home__card__content">
+          <span class="caption">Offer Taken Ratio</span>
+          <span class="card-info"
+            >{{ statisticsValues?.takenOffersRatio || 0 }}%</span
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="home__card card">
+    <app-table
+      [title]="'Most Popular Offers'"
+      [items]="offers"
+      [columns]="columns"
+    ></app-table>
+  </section>
+  <section class="home__card card overview">
+    <div class="home__title">
+      <app-card-title
+        [title]="'Stores Overview'"
+        [className]="'yellow-background'"
+      ></app-card-title>
+    </div>
+    <div class="home__cards">
+      <div class="home__card">
+        <div class="home__icon">
+          <span class="background-cyan icon cyan-background">
+            <svg-icon [src]="iconsPath + 'shop-light.svg'"></svg-icon>
+          </span>
+        </div>
+        <div class="home__card__content">
+          <span class="caption">Total Stores</span>
+          <span class="card-info">{{
+            statisticsValues?.totalStores || 0
+          }}</span>
+        </div>
+      </div>
+      <div class="home__card">
+        <div class="home__icon">
+          <span class="purble-light-background icon">
+            <svg-icon [src]="iconsPath + 'fire.svg'"></svg-icon>
+          </span>
+        </div>
+        <div class="home__card__content">
+          <span class="caption">Active Stores</span>
+          <span class="card-info">{{
+            statisticsValues?.activeStores || 0
+          }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="home__card card">
+    <app-table
+      [title]="'Most Popular Stores'"
+      [columns]="stores_columns"
+      [items]="stores"
+    >
+    </app-table>
+  </section>
+  <section class="home__card card overview">
+    <div class="home__title">
+      <app-card-title
+        [title]="'Points & Users Overview'"
+        [className]="'red-background'"
+      ></app-card-title>
+    </div>
+    <div class="home__cards">
+      <div class="home__card">
+        <div class="home__icon">
+          <span class="background-cyan icon cyan-background">
+            <svg-icon [src]="iconsPath + 'medal.svg'"></svg-icon>
+          </span>
+        </div>
+        <div class="home__card__content">
+          <span class="caption">Total Point</span>
+          <span class="card-info">{{
+            statisticsValues?.totalPointsUsed || 0
+          }}</span>
+        </div>
+      </div>
+      <div class="home__card">
+        <div class="home__icon">
+          <span class="pink-background icon">
+            <svg-icon [src]="iconsPath + 'donut_chart.svg'"></svg-icon>
+          </span>
+        </div>
+        <div class="home__card__content">
+          <span class="caption">Avg Point Per Offer</span>
+          <span class="card-info">{{
+            statisticsValues?.averagePointAmount || 0
+          }}</span>
+        </div>
+      </div>
+      <div class="home__card">
+        <div class="home__icon">
+          <span class="pistachio-background icon">
+            <svg-icon [src]="iconsPath + 'customers-light.svg'"></svg-icon>
+          </span>
+        </div>
+        <div class="home__card__content">
+          <span class="caption">Total Users</span>
+          <span class="card-info">{{ statisticsValues?.userCount || 0 }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -16,7 +16,7 @@ export const routes: Routes = [
       import('../app/home/home-routing.module').then(
         (m) => m.HomeRoutingModule
       ),
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
   },
   {
     path: 'users',
