@@ -10,4 +10,7 @@ export class OffersService {
   addOffer(offerForm: FormData) {
     return this._http.post(BASE_URL + 'Offer/AddOffer', offerForm);
   }
+  getOffers() {
+    return this._http.get(BASE_URL + 'Offer/GetAllOffersUser');
+  }
 }

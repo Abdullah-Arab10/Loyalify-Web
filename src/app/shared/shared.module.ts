@@ -5,12 +5,10 @@ import { ButtonComponent } from './components/button/button.component';
 import { CardTitleComponent } from './components/card-title/card-title.component';
 import { InputComponent } from './components/input/input.component';
 import { TitleComponent } from './components/title/title.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 import { ImageUploaderComponent } from './components/image-uploader/image-uploader.component';
 import { SelectComponent } from './components/select/select.component';
 import { TableModule } from 'primeng/table';
@@ -25,6 +23,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { InputTextModule } from 'primeng/inputtext';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     ButtonComponent,

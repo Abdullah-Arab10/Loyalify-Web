@@ -9,6 +9,7 @@ import { AuthService } from './core/http/auth.service';
 import { StoresModule } from './stores/stores.module';
 import { CategoriesModule } from './categories/categories.module';
 import { OffersModule } from './offers/offers.module';
+import { HomeModule } from './home/home.module';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ import { OffersModule } from './offers/offers.module';
     StoresModule,
     CategoriesModule,
     OffersModule,
+    HomeModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
