@@ -1,1 +1,24 @@
-
+<div class="offers center">
+  <section class="offers__banner banner">
+    <div class="offers__figure banner__figure">
+      <img [src]="imagesPath + 'figure-3.png'" alt="" />
+    </div>
+    <div class="offers__text banner__text">
+      <h3>Loyalify offers</h3>
+      <span>Did you know that you can add a new category in a minute ?!</span>
+      <app-button
+        [title]="'Create an offer'"
+        [className]="'secondary'"
+        (click)="navigateToAddOffer()"
+      ></app-button>
+    </div>
+  </section>
+  <section class="offers__list">
+    <!--     <app-table
+      [title]="'offers List'"
+      [columns]="columns"
+      [items]="offers"
+      [totalRecords]="offers.length"
+    ></app-table> -->
+  </section>
+</div>

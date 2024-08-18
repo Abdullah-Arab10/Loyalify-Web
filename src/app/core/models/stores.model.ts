@@ -8,3 +8,9 @@ export interface StoreCreateModel {
   coverImageFile: any;
   storeImageFile: any;
 }
+export interface StoreLiteModel {
+  id: number;
+  name: string;
+  category: string;
+  storeImage: string;
+}

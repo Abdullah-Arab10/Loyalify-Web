@@ -1,1 +1,83 @@
-<p>offers-add works!</p>
+<div class="center offer">
+  <div class="title">
+    <h1>New offer</h1>
+  </div>
+  <form action="submit" class="offer__form" [formGroup]="offerForm">
+    <section class="card">
+      <app-card-title
+        [title]="'Name & description'"
+        [className]="'pistachio-background'"
+      ></app-card-title>
+      <div class="offer__fields">
+        <div class="offer__field">
+          <app-input
+            [formGroup]="offerForm"
+            [label]="'offer title'"
+            [control]="'name'"
+          ></app-input>
+        </div>
+        <div class="offer__field">
+          <app-input
+            [formGroup]="offerForm"
+            [label]="'Description'"
+            [control]="'description'"
+            [field]="'textarea'"
+          ></app-input>
+        </div>
+      </div>
+    </section>
+    <section class="card">
+      <app-card-title
+        [title]="'Images'"
+        [className]="'cyan-background'"
+      ></app-card-title>
+      <div class="offer__fields">
+        <div class="offer__field">
+          <app-image-uploader
+            [label]="'offer image'"
+            [control]="'imageFile'"
+            (imageFilesSelection)="selectImage($event)"
+          ></app-image-uploader>
+        </div>
+        <div class="offer__field"></div>
+      </div>
+    </section>
+    <section class="card">
+      <app-card-title
+        [title]="'Store & details'"
+        [className]="'lavendar-background'"
+      ></app-card-title>
+      <div class="offer__fields">
+        <div class="offer__field">
+          <app-select
+            [form]="offerForm"
+            [control]="'storeId'"
+            [label]="'Store'"
+            [items]="stores"
+          ></app-select>
+        </div>
+      </div>
+      <div class="offer__field">
+        <app-input
+          [control]="'expiresIn'"
+          [label]="'Expires in (days)'"
+          [formGroup]="offerForm"
+        ></app-input>
+      </div>
+      <div class="offer__field">
+        <app-input
+          [control]="'pointAmount'"
+          [label]="'Point Amount'"
+          [currency]="true"
+          [formGroup]="offerForm"
+        ></app-input>
+      </div>
+    </section>
+
+    <section class="submit">
+      <div class="offer__button">
+        <app-button [title]="'Create'" (click)="submit()"></app-button>
+      </div>
+    </section>
+  </form>
+</div>
